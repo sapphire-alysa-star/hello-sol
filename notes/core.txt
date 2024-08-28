@@ -1,0 +1,42 @@
+
+Core Data Types:
+Pubkey — The address of a Solana account. Some account addresses are ed25519 public keys, with corresponding secret keys that are managed off-chain. Often, though, account addresses do not have corresponding secret keys — as with program derived addresses — or the secret key is not relevant to the operation of a program, and may have even been disposed of. As running Solana programs can not safely create or manage secret keys, the full Keypair is not defined in solana-program but in solana-sdk.
+Hash — A cryptographic hash. Used to uniquely identify blocks, and also for general purpose hashing.
+AccountInfo — A description of a single Solana account. All accounts that might be accessed by a program invocation are provided to the program entrypoint as AccountInfo.
+Instruction — A directive telling the runtime to execute a program, passing it a set of accounts and program-specific data.
+ProgramError and ProgramResult — The error type that all programs must return, reported to the runtime as a u64.
+Sol — The Solana native token type, with conversions to and from lamports, the smallest fractional unit of SOL, in the native_token module.
+
+enum ProgramResult {
+    Ok(()),
+    Err(ProgramError),
+}
+
+pub enum ProgramError {
+    Custom(u32),
+    InvalidArgument,
+    InvalidInstructionData,
+    InvalidAccountData,
+    AccountDataTooSmall,
+    InsufficientFunds,
+    IncorrectProgramId,
+    MissingRequiredSignature,
+    AccountAlreadyInitialized,
+    UninitializedAccount,
+    NotEnoughAccountKeys,
+    AccountBorrowFailed,
+    MaxSeedLengthExceeded,
+    InvalidSeeds,
+    BorshIoError(String),
+    AccountNotRentExempt,
+    UnsupportedSysvar,
+    IllegalOwner,
+    MaxAccountsDataAllocationsExceeded,
+    InvalidRealloc,
+    MaxInstructionTraceLengthExceeded,
+    BuiltinProgramsMustConsumeComputeUnits,
+    InvalidAccountOwner,
+    ArithmeticOverflow,
+    Immutable,
+    IncorrectAuthority,
+}

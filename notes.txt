@@ -1,0 +1,13 @@
+minimal version with timestamp:
+> Program logged: "Hello, world!"
+> Program logged: "Current Timestamp: 1724663843"
+> Program consumed: 949 of 200000 compute units (200K units)
+
+
+
+Suff you can do in Solana:
+-- Get the current timestamp
+-- Note: Each validator reports their UTC time to the ledger on a regular interval by intermittently adding a timestamp to a Vote for a particular block. 
+A requested block's time is calculated from the stake-weighted mean of the Vote timestamps in a set of recent blocks recorded on the ledger.
+-- Time function doesnt work well on local host
+

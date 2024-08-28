@@ -1,0 +1,28 @@
+Retardedly Solana instructions cannot by default return anything to caller. Thats stupid but ok. They can log stuff.
+
+https://docs.solanalabs.com/proposals/return-data
+
+
+The existing solution that Solang uses, writes the return data to the callee account data.
+ The caller's account cannot be used, since the callee may not be the same SBF program, so it will not have permission to write to the callee's account data.
+
+Another solution would be to have a single return data account which is passed around through CPI.
+Again this does not work for CPI as the callee may not have permission to write to it.
+
+The problem with this solution is:
+
+It does not work for RPC calls
+It is very racey; a client has to submit the Tx and then retrieve the account data. This is not atomic so the return data can be overwritten by another transaction.
+
+
+use solana_program::msg;
+
+// The fast form
+msg!("verifying multisig");
+
+// With formatting
+let err = "not enough signers";
+msg!("multisig failed: {}", err);
+
+Note that Rust’s formatting machinery is relatively CPU-intensive for constrained environments like the Solana VM.
+
