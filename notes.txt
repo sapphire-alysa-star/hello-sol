@@ -11,3 +11,24 @@ Suff you can do in Solana:
 A requested block's time is calculated from the stake-weighted mean of the Vote timestamps in a set of recent blocks recorded on the ledger.
 -- Time function doesnt work well on local host
 
+Documented:
+-- Get the current unix timestamp (may not be precise)
+
+Partial:
+-- Return values (toDo: how big is this buffer really)
+-- You can read from the return data log in a CPI
+
+Definitely Can Do:
+-- Send Solana
+-- Send SPL tokens
+-- Make a CPI
+
+Other:
+-- Make a new PDA
+-- Close PDAs and other owned accounts
+-- 
+
+
+Need to grok in vanilla solana:
+-- Zero Copy
+-- Writeup on compute budgets and what costs what
