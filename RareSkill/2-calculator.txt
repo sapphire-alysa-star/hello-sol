@@ -1,0 +1,67 @@
+good looking solana course 
+
+https://www.rareskills.io/post/hello-world-solana
+
+1 - Basics 
+
+2 - Basic Contract
+
+contract Day2 {
+
+	event Result(uint256);
+	event Who(string, address);
+	
+	function doSomeMath(uint256 a, uint256 b) public {
+		uint256 result = a + b;
+		emit Result(result);
+	}
+
+	function sayHelloToMe() public {
+		emit Who("Hello World", msg.sender);
+	}
+}
+
+
+pub fn initialize(ctx: Context<Initialize>,
+                  a: u64,
+                  b: u64) -> Result<()> {
+    msg!("You sent {} and {}", a, b);
+    Ok(())
+}
+
+pub fn initialize(ctx: Context<Initialize>,
+                  a: u64,
+                  b: u64,
+                  message: String) -> Result<()> {
+    msg!("You said {:?}", message);
+    msg!("You sent {} and {}", a, b);
+    Ok(())
+}
+
+pub fn initialize(ctx: Context<Initialize>,
+                  a: u64,
+                  b: u64,
+                  message: String) -> Result<()> {
+    msg!("You said {:?}", message);
+    msg!("You sent {} and {}", a, b);
+    Ok(())
+}
+
+// added this function
+pub fn array(ctx: Context<Initialize>,
+             arr: Vec<u64>) -> Result<()> {
+    msg!("Your array {:?}", arr);
+    Ok(())
+}
+
+As you can see, just doing a simple math operation takes up almost 1000 units. Since we have 200k units, we can only do a few hundred simple arithmetic operations within the per-transaction gas limit. So, while transactions on Solana are generally cheaper than on Ethereum, we are still limited by a relatively small compute unit cap and would not be able to carry out computationally intensive tasks like fluid dynamic simulations on the Solana chain.
+
+5K compute units just for a cube root! dont use floats!
+
+GOAL:
+
+1: Build a calculator that does the +, -, x, and ÷. and also sqrt and log10.
+
+2: Allow people to pass in Strings, vectors and int arguments to function on chain
+
+3: Add tests for calculator

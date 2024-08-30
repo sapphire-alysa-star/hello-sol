@@ -1,0 +1,4 @@
+Solana does not have constructors so:
+
+Yet another corollary: Solana does not have immutable variables the way Solidity interprets them (variables that can only be set in the constructor).
+

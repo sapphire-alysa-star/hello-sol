@@ -1,0 +1,13 @@
+
+
+
+
+goal:
+
+1 - add custom errors without anchor
+
+2 - test this actually worked with tests!
+
+3 - configure local env to redeploy contract and run tests (you should have testing down already)
+
+4 - require!

@@ -1,0 +1,16 @@
+
+
+Calculator on chain:
+
+1: Build a calculator that does the +, -, x, and ÷. and also sqrt and log10.
+
+2: Allow people to pass in Strings, vectors and int arguments to function on chain
+
+
+still gotta read through:
+
+https://www.rareskills.io/post/msg-sender-solana
+
+testing. soon gtg
+
+....
