@@ -22,14 +22,22 @@ pub fn process_instruction(
     _instruction_data: &[u8]
 ) -> ProgramResult {
     // log a message to the blockchain
-    msg!("Hello, world!");
+    // msg!("Hello, world!");
 
     
-    let clock = Clock::get()?;
-    let current_timestamp = clock.unix_timestamp;
-    msg!("Current Timestamp: {}", current_timestamp);
+    // let clock = Clock::get()?;
+    // let current_timestamp = clock.unix_timestamp;
+    // msg!("Current Timestamp: {}", current_timestamp);
 
-    solana_program::program::set_return_data(b"Custom return value");
+    // solana_program::program::set_return_data(b"Custom return value");
+
+    let mut x: u8 = 0;
+
+    for i in 0..255 {
+        x += 1;
+    }
+    // 1054 of 200000 compute units - 0 to 255.
+
  
     // gracefully exit the program
     Ok(())

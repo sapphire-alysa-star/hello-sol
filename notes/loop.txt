@@ -1,0 +1,7 @@
+let mut x: u8 = 0;
+
+for i in 0..255 {
+    x += 1;
+}
+
+1054 of 200000 compute units

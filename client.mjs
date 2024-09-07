@@ -6,7 +6,7 @@ import {
 } from "@solana/web3.js";
 import { getKeypairFromFile } from "@solana-developers/helpers";
 
-const programId = new PublicKey("3YeTvPaMWJNBnGdPQ3FwYRo8FWty8cvFyBevXmNfJUvc");
+const programId = new PublicKey("HAdTDDZ9mMWWABFUqoKCVS5QfvoMPhGwNQgCTfFsHC9h");
 
 // Connect to a solana cluster. Either to your local test validator or to devnet
 const connection = new Connection("http://localhost:8899", "confirmed");
